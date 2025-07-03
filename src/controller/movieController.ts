@@ -1,8 +1,19 @@
 import { Request, Response, NextFunction } from 'express';
-import { IMovie } from '../models/movie';
+import { IDetailMovieList, IMovie } from '../models/movie';
+import { MovieService } from '../services/movieService';
+import { MovieUtils } from '../utils/movieUtils';
 
-export const getParsedMovieList = (req: Request, res: Response, next: NextFunction) => {
-    res.send('Teste');
+const utils = MovieUtils;
+const service = MovieService;
+
+
+export const getParsedMovieList = (req: Request, res: Response<IMovie[]>, next: NextFunction) => {
+    service.getDetailMovieList().then((data: IDetailMovieList) => {
+        const movieList: any[] = data.filmes.map(detailMovie => utils.getFormatted(detailMovie));
+        res.json(movieList)
+    })
+    .catch(err => {
+        throw new Error(err);
+    });
 }
-
 

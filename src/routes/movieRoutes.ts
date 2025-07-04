@@ -6,4 +6,5 @@ const router = Router();
 
 router.get('/', getParsedMovieList);
 
+
 export default router;

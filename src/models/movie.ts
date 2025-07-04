@@ -20,7 +20,7 @@ export interface IDetailMovie {
   titulo: string
   diretor: string
   ano: number
-  genero: string[]
+  genero: MovieGenre[]
   duracao: number
   ratings: Rating[]
   elenco: string[]

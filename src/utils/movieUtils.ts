@@ -20,7 +20,8 @@ export class MovieUtils {
     }
 
     private static getProfit(detailMovie: IDetailMovie) {
-        return this.utils.getNumber(detailMovie.bilheteria) - this.utils.getNumber(detailMovie.orcamento);
+        const profit =  this.utils.getNumber(detailMovie.bilheteria) - this.utils.getNumber(detailMovie.orcamento);
+        return this.utils.getWord(profit);
     }
 
     private static getSynopsis(synopsisList: ISynopsis[]) {

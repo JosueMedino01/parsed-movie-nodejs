@@ -6,7 +6,9 @@ import { MovieUtils } from '../utils/movieUtils';
 const utils = MovieUtils;
 const service = MovieService;
 
-
+/**
+ * Método responsável por formatar/parsear os metadados 
+ */
 export const getParsedMovieList = (req: Request, res: Response<IMovie[]>, next: NextFunction) => {
     service.getDetailMovieList().then((data: IDetailMovieList) => {
         const movieList: any[] = data.filmes.map(detailMovie => utils.getFormatted(detailMovie));

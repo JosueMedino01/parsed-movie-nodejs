@@ -8,18 +8,18 @@ export class WordNumberUtils {
      */
     static getWord(value: number) {
         if (value >= 1000000000) {
-            return (value / 1000000000).toFixed(1).replace('.0', '') + ' bilhões';
+            return '$' + (value / 1000000000) + ' bilhões';
         } 
         
         if (value >= 1000000) {
-            return (value / 1000000).toFixed(1).replace('.0', '') + ' milhões';
+            return '$' + (value / 1000000) + ' milhões';
         } 
         
         if (value >= 1000) {
-            return (value / 1000).toFixed(1).replace('.0', '') + ' mil';
+            return '$' + (value / 1000) + ' mil';
         } 
         
-        return value.toString();
+        return '$' + value.toString();
     }
 
     /**
@@ -31,13 +31,6 @@ export class WordNumberUtils {
         const splited = value.split(" ");
         const splitedNumber = Number(splited[0].replace('$', ''));
         const splitedStrFactor = splited[1];
-
-        console.log(
-            'getNumber',
-            splited,
-            splitedNumber,
-            splitedStrFactor
-        )
         
         return splitedNumber * FACTOR_WORDS_MAP[splitedStrFactor];
     }

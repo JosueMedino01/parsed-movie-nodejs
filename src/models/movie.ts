@@ -1,4 +1,4 @@
-export type MovieGenre = "Crime" | "Drama";
+export type MovieGenre = "Crime" | "Drama" | "Aventura" | "Fantasia"
 
 export interface IMovie {
     titulo: string,

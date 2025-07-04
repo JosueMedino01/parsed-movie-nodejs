@@ -19,12 +19,12 @@ export class MovieUtils {
         }
     }
 
-    private static getProfit(detailMovie: IDetailMovie) {
+    public static getProfit(detailMovie: IDetailMovie) {
         const profit =  this.utils.getNumber(detailMovie.bilheteria) - this.utils.getNumber(detailMovie.orcamento);
         return this.utils.getWord(profit);
     }
 
-    private static getSynopsis(synopsisList: ISynopsis[]) {
+    public static getSynopsis(synopsisList: ISynopsis[]) {
         let englishText: string | null = null;
 
         for (let synopsis of synopsisList) {
@@ -38,7 +38,7 @@ export class MovieUtils {
         return (englishText) ? englishText : synopsisList[0].texto;
     }
 
-    private static getBetterAward(awards: IAward[]) {
+    public static getBetterAward(awards: IAward[]) {
         let betterEvaluation = -1;
         let betterIndex= -1
 
@@ -52,7 +52,7 @@ export class MovieUtils {
         return awards[betterIndex].nome;
     }
 
-    private static getIMDbEvaluation(ratingList: Rating[]){
+    public static getIMDbEvaluation(ratingList: Rating[]){
         const foundRating = ratingList.find(e => e.fonte == "IMDb");
         return foundRating?.valor ?? 0;
     }

@@ -12,7 +12,7 @@ const service = MovieService;
 export const getParsedMovieList = (req: Request, res: Response<IMovie[]>, next: NextFunction) => {
     service.getDetailMovieList().then((data: IDetailMovieList) => {
         const movieList: any[] = data.filmes.map(detailMovie => utils.getFormatted(detailMovie));
-        res.json(movieList)
+        res.json(movieList);
     })
     .catch(err => {
         throw new Error(err);

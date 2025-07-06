@@ -1,4 +1,4 @@
-import { DETAIL_MOVIE_MOCK } from '../../constants/detail-movie-mock';
+import { DETAIL_MOVIE_MOCK } from '../../constants/movie-mock';
 import { IAward, ISynopsis, Rating } from '../../models/movie';
 import { MovieUtils } from '../movieUtils';
 

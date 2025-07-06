@@ -18,4 +18,3 @@ export const getParsedMovieList = (req: Request, res: Response<IMovie[]>, next: 
         throw new Error(err);
     });
 }
-

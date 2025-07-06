@@ -18,7 +18,7 @@ export class MovieService {
             return await response.json() as IDetailMovieList;
         }
         catch {
-            throw new Error();
+            throw new Error('Erro ao extrair metadados');
         }
     };
 

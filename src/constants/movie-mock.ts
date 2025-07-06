@@ -1,4 +1,4 @@
-import { IDetailMovie } from "../models/movie";
+import { IDetailMovie, IMovie } from "../models/movie";
 
 export const DETAIL_MOVIE_MOCK: IDetailMovie = {
     "titulo": "O Senhor dos Anéis: O Retorno do Rei",
@@ -54,3 +54,20 @@ export const DETAIL_MOVIE_MOCK: IDetailMovie = {
     }
     ]
 }
+
+
+export const FORMATTED_MOCK: IMovie = {
+    "titulo": "O Senhor dos Anéis: O Retorno do Rei",
+    "ano": 2003,
+    "diretor": "Peter Jackson",
+    "duracaoSegundos": 12060,
+    "genero": [
+        "Aventura",
+        "Fantasia"
+    ],
+    "sinopse": "The Fellowship of the Ring prepares for the final battle against Sauron to save Middle-earth.",
+    "lucro": "$1.048 bilhões",
+    "maiorPremiacao": "Oscar de Melhor Filme",
+    "notaIMDb": 8.9
+}
+ 

@@ -1,11 +1,13 @@
-FROM node:latest
+FROM node:18
 
 WORKDIR /app
 
-COPY package.json /app
+COPY package.json package-lock.json* ./
 
 RUN npm install
 
-COPY . /app
+COPY . .
 
-CMD ["npm","start"]
+CMD ["npx", "ts-node", "src/server.ts"]
+
+EXPOSE 3000

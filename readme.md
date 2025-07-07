@@ -17,6 +17,11 @@ http://54.88.183.172:3000/filmes
 npm run dev
 ```
 
+# Endpoints disponíveis
+```
+http://localhost:3000/filmes
+```
+
 ## Como rodar os testes unitários?
 ```
 npm run test
